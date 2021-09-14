@@ -272,6 +272,46 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 66,
+                'title' => 'meal_create',
+            ],
+            [
+                'id'    => 67,
+                'title' => 'meal_edit',
+            ],
+            [
+                'id'    => 68,
+                'title' => 'meal_show',
+            ],
+            [
+                'id'    => 69,
+                'title' => 'meal_delete',
+            ],
+            [
+                'id'    => 70,
+                'title' => 'meal_access',
+            ],
+            [
+                'id'    => 71,
+                'title' => 'meal_content_create',
+            ],
+            [
+                'id'    => 72,
+                'title' => 'meal_content_edit',
+            ],
+            [
+                'id'    => 73,
+                'title' => 'meal_content_show',
+            ],
+            [
+                'id'    => 74,
+                'title' => 'meal_content_delete',
+            ],
+            [
+                'id'    => 75,
+                'title' => 'meal_content_access',
+            ],
+            [
+                'id'    => 76,
                 'title' => 'profile_password_edit',
             ],
         ];

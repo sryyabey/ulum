@@ -57,7 +57,7 @@ return [
     'update_profile_success'         => 'Profil başarıyla güncellendi',
     'change_password_success'        => 'Parolanız başarıyla değiştirildi.',
     'delete_account_success'         => 'Hesap başarıyla silindi.',
-    'saved'                          => 'Saved.',
+    'saved'                          => 'Kaydedildi',
     'profile_information'            => 'Profile information',
     'all_messages'                   => 'Tüm mesajlar',
     'new_message'                    => 'Yeni Mesaj',
