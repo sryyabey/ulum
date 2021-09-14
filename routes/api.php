@@ -17,4 +17,11 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Notes
     Route::post('notes/media', 'NotesApiController@storeMedia')->name('notes.storeMedia');
     Route::apiResource('notes', 'NotesApiController');
+
+    // Meal
+    Route::apiResource('meals', 'MealApiController');
+
+    // Meal Contents
+    Route::post('meal-contents/media', 'MealContentsApiController@storeMedia')->name('meal-contents.storeMedia');
+    Route::apiResource('meal-contents', 'MealContentsApiController');
 });

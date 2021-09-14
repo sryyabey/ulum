@@ -77,25 +77,23 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('notes/ckmedia', 'NotesController@storeCKEditorImages')->name('notes.storeCKEditorImages');
     Route::resource('notes', 'NotesController');
 
+    // Meal
+    Route::delete('meals/destroy', 'MealController@massDestroy')->name('meals.massDestroy');
+    Route::post('meals/parse-csv-import', 'MealController@parseCsvImport')->name('meals.parseCsvImport');
+    Route::post('meals/process-csv-import', 'MealController@processCsvImport')->name('meals.processCsvImport');
+    Route::resource('meals', 'MealController');
+
+    // Meal Contents
+    Route::delete('meal-contents/destroy', 'MealContentsController@massDestroy')->name('meal-contents.massDestroy');
+    Route::post('meal-contents/media', 'MealContentsController@storeMedia')->name('meal-contents.storeMedia');
+    Route::post('meal-contents/ckmedia', 'MealContentsController@storeCKEditorImages')->name('meal-contents.storeCKEditorImages');
+    Route::post('meal-contents/parse-csv-import', 'MealContentsController@parseCsvImport')->name('meal-contents.parseCsvImport');
+    Route::post('meal-contents/process-csv-import', 'MealContentsController@processCsvImport')->name('meal-contents.processCsvImport');
+    Route::resource('meal-contents', 'MealContentsController');
+
     Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
-
-
-    Route::get('quran','QuranController@index')->name('quran');
 });
-Route::group(['prefix' => 'quran', 'as' => 'quran.', 'namespace' => 'Quran', 'middleware' => ['auth']], function () {
-    Route::get('quran','QuranController@index')->name('quran');
-    Route::post('quran','QuranController@index')->name('quran');
-});
-
-
-Route::group(['prefix' => 'ajax', 'as' => 'ajax.', 'namespace' => 'Ajax', 'middleware' => ['auth']], function () {
-    Route::get('getCountAyah/{id?}','QuranAjaxController@getCountAyah')->name('getCountAyah');
-    Route::post('getInfo','QuranAjaxController@getInfo')->name('getInfo');
-    Route::post('note_save','NoteAjaxController@note_save')->name('note_save');
-    Route::post('note_delete','NoteAjaxController@note_delete')->name('note_delete');
-});
-
-    Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
     if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
         Route::get('password', 'ChangePasswordController@edit')->name('password.edit');

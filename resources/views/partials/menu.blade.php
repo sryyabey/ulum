@@ -152,7 +152,7 @@
                     </li>
                 @endcan
                 @can('kutup_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/surahs*") ? "menu-open" : "" }} {{ request()->is("admin/qurans*") ? "menu-open" : "" }} {{ request()->is("admin/languages*") ? "menu-open" : "" }} {{ request()->is("admin/translates*") ? "menu-open" : "" }} {{ request()->is("admin/notes*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/surahs*") ? "menu-open" : "" }} {{ request()->is("admin/qurans*") ? "menu-open" : "" }} {{ request()->is("admin/languages*") ? "menu-open" : "" }} {{ request()->is("admin/translates*") ? "menu-open" : "" }} {{ request()->is("admin/notes*") ? "menu-open" : "" }} {{ request()->is("admin/meals*") ? "menu-open" : "" }} {{ request()->is("admin/meal-contents*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-book">
 
@@ -219,6 +219,30 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.note.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('meal_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.meals.index") }}" class="nav-link {{ request()->is("admin/meals") || request()->is("admin/meals/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-book-open">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.meal.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('meal_content_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.meal-contents.index") }}" class="nav-link {{ request()->is("admin/meal-contents") || request()->is("admin/meal-contents/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-book-open">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.mealContent.title') }}
                                         </p>
                                     </a>
                                 </li>
