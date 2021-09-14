@@ -16,7 +16,7 @@ class Quran extends Model implements HasMedia
     use InteractsWithMedia;
     use HasFactory;
 
-    public $table = 'qurans';
+    public $table = 'quran_al_kerim';
 
     public static $searchable = [
         'ayah',
