@@ -102,3 +102,16 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
         Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
     }
 });
+
+Route::group(['prefix' => 'quran', 'as' => 'quran.', 'namespace' => 'Quran', 'middleware' => ['auth']], function () {
+    Route::get('quran','QuranController@index')->name('quran');
+    Route::post('quran','QuranController@index')->name('quran');
+});
+
+
+Route::group(['prefix' => 'ajax', 'as' => 'ajax.', 'namespace' => 'Ajax', 'middleware' => ['auth']], function () {
+    Route::get('getCountAyah/{id?}','QuranAjaxController@getCountAyah')->name('getCountAyah');
+    Route::post('getInfo','QuranAjaxController@getInfo')->name('getInfo');
+    Route::post('note_save','NoteAjaxController@note_save')->name('note_save');
+    Route::post('note_delete','NoteAjaxController@note_delete')->name('note_delete');
+});

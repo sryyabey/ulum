@@ -16,12 +16,13 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/dusk": "^6.11",
         "laravel/framework": "^8.12",
+        "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.5",
-        "yajra/laravel-datatables-oracle": "^9.18",
         "laravel/ui": "^3.3",
-        "spatie/laravel-medialibrary": "^8.7",
         "nuovo/spreadsheet-reader": "^0.5.11",
-        "laravel/sanctum": "^2.8"
+        "realrashid/sweet-alert": "^4.0",
+        "spatie/laravel-medialibrary": "^8.7",
+        "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
